@@ -24,7 +24,6 @@ const { width, height } = Dimensions.get('window');
 let numeroClicks = 0;
 let numeroClicksConfiguraciones = 0;
 
-
 const LeftActions = () => {
   return (
     <View
@@ -76,6 +75,8 @@ export default class App extends React.Component {
       bgColor: "",
       opcionCrazy: "",
       cantidadClicks: "",
+      opcionConfiguracion: "",
+      cantidadSwipesConfiguracion: "",      
       ///////////////////////////////////////////////
       opcionSelectClicks: "", 
       showToast: false,
@@ -150,6 +151,12 @@ export default class App extends React.Component {
     if(!fondo)
       return ToastAndroid.showWithGravityAndOffset("Te falta seleccionar un fondo D:", ToastAndroid.LONG, ToastAndroid.CENTER, 0, 0);
     
+    // Validamos que hayan seleccionado un número de swipes para configuraciones
+    let opcConf = this.state.opcionConfiguracion;
+    console.log(opcConf)
+      if(!opcConf)
+        return ToastAndroid.showWithGravityAndOffset("Te falta seleccionar # de swipes para configuración D:", ToastAndroid.LONG, ToastAndroid.CENTER, 0, 0);
+    
     // Validamos que hayan seleccionado una opción de crazy cell
     let crazy = this.state.opcionSelectClicks;
     let clicks = "";
@@ -181,6 +188,7 @@ export default class App extends React.Component {
       background: fondo,
       crazy: crazy,
       clicks: clicks,
+      swipesConfiguracion: opcConf,
     }
     Storage.saveData(configuracion);
     return Storage.loadData().then((res) => {
@@ -212,9 +220,10 @@ export default class App extends React.Component {
 
   _checarNumeroClicksConfiguraciones = () => {
     numeroClicksConfiguraciones++;
+    let opcConfiguracion = this.state.opcionConfiguracion;
     console.log('swipes configuraciones: '+numeroClicksConfiguraciones);
     console.log(numeroClicksConfiguraciones);
-    if(numeroClicksConfiguraciones == 5){
+    if(numeroClicksConfiguraciones >= opcConfiguracion){
       numeroClicksConfiguraciones = 0;
       this.setState({ visible: true });
     }
@@ -349,7 +358,9 @@ export default class App extends React.Component {
                   <Text style={{ fontSize: 12, fontStyle: 'italic', paddingBottom: 10 }}>
                     Nota* : Recuerda que es la única forma de volver a ver tus configuraciones, utiliza swipe <Icon style={{ fontSize: 14 }} name="arrow-forward" />
                   </Text>                  
-                  <Picker />
+                  <Picker 
+                    obtenerValor={val => this.setState({ opcionConfiguracion: val })}
+                  />
                 </View>
               </Tab>
             </Tabs>
