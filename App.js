@@ -216,7 +216,8 @@ export default class App extends React.Component {
 
       //let letrero = "Has dado "+numeroClicks+" clicks";
       //ToastAndroid.showWithGravityAndOffset(letrero, ToastAndroid.LONG, ToastAndroid.TOP, 25, 50);
-      let random = Math.floor(Math.random() * 7) + 1 ;
+      let numeroEventos = Evento.obtenerTotalEventos();
+      let random = Math.floor(Math.random() * numeroEventos) + 1 ;
       let res = Evento.eventoAleatorio(random);
       numeroClicks = 0;
       this.setState({ mostrarEvento: true, eventoRespuesta: res });
@@ -244,7 +245,8 @@ export default class App extends React.Component {
     console.log(numeroClicks);
     if(numeroClicks >= clicks){
       numeroClicks = 0;
-      let random = Math.floor(Math.random() * 7) + 1 ;
+      let numeroEventos = Evento.obtenerTotalEventos();
+      let random = Math.floor(Math.random() * numeroEventos) + 1 ;
       let res = Evento.eventoAleatorio(random);      
       this.setState({ mostrarEvento: true, eventoRespuesta: res });
       if(res.tipo == "mensaje")
