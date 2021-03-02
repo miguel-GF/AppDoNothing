@@ -141,6 +141,35 @@ const s = StyleSheet.create({
 		paddingTop: 30,
 		margin: 25,
 		marginTop: 35
+	},
+	// ESTILOS PARA EL FONDO DE LAS ANIMACIONES
+	bgRedAnimacion: {
+		backgroundColor: 'red', 
+		justifyContent: 'center', 
+		alignItems: 'center', 
+		width: width, 
+		height: height
+	},
+	bgBlackAnimacion: {
+		backgroundColor: 'black', 
+		justifyContent: 'center', 
+		alignItems: 'center', 
+		width: width, 
+		height: height
+	},
+	bgBlueAnimacion: {
+		backgroundColor: 'blue', 
+		justifyContent: 'center', 
+		alignItems: 'center', 
+		width: width, 
+		height: height
+	},
+	bgDefaultAnimacion: {
+		backgroundColor: 'floralwhite', 
+		justifyContent: 'center', 
+		alignItems: 'center', 
+		width: width, 
+		height: height
 	}
 });
   
