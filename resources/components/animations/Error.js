@@ -5,26 +5,32 @@ import PropTypes from 'prop-types';
 
 const { width, height } = Dimensions.get('window');
 
-export default class DangerRed extends Component {
+export default class Error extends Component {
 
   static propTypes = {  
     obtenerValor: PropTypes.func,
+    bgColor: String,
   };
 
   _retornarClick = () => {    
     this.props.obtenerValor(1);
   }
-
+  
   render() {
     return (    
       <TouchableOpacity onPress={() => this._retornarClick()}
-      style={{ backgroundColor:'red', justifyContent: 'center', alignItems: 'center', width: width, height: height }} onLayout={(evt) => this.loader.play() } >
+        style={{...this.props.bgColor == 'red' ? s.bgRedANnimacion :
+          this.props.bgColor == 'blue' ? s.bgBlueAnimacion :
+          this.props.bgColor == 'black' ? s.bgBlackAnimacion :
+          s.bgDefaultAnimacion
+        }}
+        onLayout={(evt) => this.loader.play() } >
          <LottieView
           ref={loader => { this.loader = loader }}
           resizeMode='cover'
           loop={true}
           style={{ width: 350 }}
-          source={require('../../assets/json/danger-red.json')}
+          source={require('../../assets/json/error-red.json')}
         />
       </TouchableOpacity>
     )
