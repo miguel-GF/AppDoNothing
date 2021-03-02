@@ -116,7 +116,10 @@ const eventos = [
 export default {
 	eventoAleatorio(id) {
 		let evento = eventos.find(e => e.id == id);
-		console.log(evento);
 		return evento;
+	},
+	obtenerTotalEventos() {
+		let total = eventos.length;
+		return total;
 	}
 };
