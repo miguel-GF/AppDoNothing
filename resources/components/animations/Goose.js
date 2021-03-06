@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Dimensions, TouchableOpacity } from 'react-native';
 import LottieView from 'lottie-react-native';
 import PropTypes from 'prop-types';
-import { s } from './resources/styles/estilos';
+import { s } from '../../styles/estilos';
 
 const { width, height } = Dimensions.get('window');
 
@@ -10,7 +10,7 @@ export default class Goose extends Component {
 
   static propTypes = {  
     obtenerValor: PropTypes.func,
-    bgColor: String,
+    bgColor: PropTypes.string,
   };
 
   _retornarClick = () => {    

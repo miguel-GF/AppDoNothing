@@ -291,40 +291,40 @@ export default class App extends React.Component {
               </View>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 1 &&
-              <Danger obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Danger obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 2 &&
-              <Error obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Error obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 3 &&
-              <Death obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Death obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 4 &&
-              <Dots obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Dots obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 5 &&
-              <Garbage obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Garbage obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 6 &&
-              <Girl obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Girl obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 7 &&
-              <Goose obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Goose obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 8 &&
-              <Heart obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Heart obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 9 &&
-              <Rocket obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Rocket obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 10 &&
-              <Sand obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Sand obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }          
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 11 &&
-              <Walk obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Walk obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
             {this.state.mostrarEvento && this.state.eventoRespuesta.tipo == "animacion" && this.state.eventoRespuesta.numeroAnimacion == 12 &&
-              <Wave obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.bgColor}/>
+              <Wave obtenerValor={val => this._sumarClickParaEventoDesdeAnimacion(val)} bgColor={this.state.bgColor}/>
             }
           </ScrollView>
         </SafeAreaView>
