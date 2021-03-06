@@ -62,10 +62,20 @@ export default class App extends React.Component {
             clicks: numero,
           }
           Storage.saveData(configuracion);
-          this.setState({ bgColor: res.background, opcionCrazy: res.crazy, cantidadClicks: numero });
+          this.setState({ 
+            bgColor: res.background, 
+            opcionCrazy: res.crazy, 
+            cantidadClicks: numero ,
+            cantidadSwipesConfiguracion: res.swipesConfiguracion,
+          });
         }
         else
-          this.setState({ bgColor: res.background, opcionCrazy: res.crazy, cantidadClicks: res.clicks });
+          this.setState({ 
+            bgColor: res.background, 
+            opcionCrazy: res.crazy, 
+            cantidadClicks: res.clicks,
+            cantidadSwipesConfiguracion: res.swipesConfiguracion,
+          });
       }
       else
         this.setState({ visible: true })
@@ -81,8 +91,8 @@ export default class App extends React.Component {
       bgColor: "",
       opcionCrazy: "",
       cantidadClicks: "",
-      opcionConfiguracion: "",
       cantidadSwipesConfiguracion: "",      
+      opcionConfiguracion: "",
       ///////////////////////////////////////////////
       opcionSelectClicks: "", 
       showToast: false,
@@ -199,7 +209,12 @@ export default class App extends React.Component {
     Storage.saveData(configuracion);
     return Storage.loadData().then((res) => {
       if(res)
-        this.setState({ bgColor: res.background, opcionCrazy: res.crazy, cantidadClicks: res.clicks, visible: false });      
+        this.setState({ 
+          bgColor: res.background, 
+          opcionCrazy: res.crazy, 
+          cantidadClicks: res.clicks,
+          cantidadSwipesConfiguracion: res.swipesConfiguracion, 
+          visible: false });      
     });
     
   }
@@ -216,6 +231,7 @@ export default class App extends React.Component {
       let numeroEventos = Evento.obtenerTotalEventos();
       let random = Math.floor(Math.random() * numeroEventos) + 1 ;
       let res = Evento.eventoAleatorio(random);
+      console.log(res);
       numeroClicks = 0;
       this.setState({ mostrarEvento: true, eventoRespuesta: res });
       if(res.tipo == "mensaje")
@@ -227,7 +243,7 @@ export default class App extends React.Component {
 
   _checarNumeroClicksConfiguraciones = () => {
     numeroClicksConfiguraciones++;
-    let opcConfiguracion = this.state.opcionConfiguracion;
+    let opcConfiguracion = this.state.cantidadSwipesConfiguracion;
     console.log('swipes configuraciones: '+numeroClicksConfiguraciones);
     console.log(numeroClicksConfiguraciones);
     if(numeroClicksConfiguraciones >= opcConfiguracion){
@@ -244,7 +260,8 @@ export default class App extends React.Component {
       numeroClicks = 0;
       let numeroEventos = Evento.obtenerTotalEventos();
       let random = Math.floor(Math.random() * numeroEventos) + 1 ;
-      let res = Evento.eventoAleatorio(random);      
+      let res = Evento.eventoAleatorio(random);    
+      console.log(res)  
       this.setState({ mostrarEvento: true, eventoRespuesta: res });
       if(res.tipo == "mensaje")
         ToastAndroid.showWithGravityAndOffset(res.texto, ToastAndroid.LONG, ToastAndroid.CENTER, 0, 0);
