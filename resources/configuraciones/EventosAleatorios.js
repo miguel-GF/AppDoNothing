@@ -90,27 +90,6 @@ const eventos = [
 		texto: "",
 		imagen: null, 
 	},
-	{
-		id: 14,
-		tipo: "animacion",
-		numeroAnimacion: 10,
-		texto: "",
-		imagen: null, 
-	},
-	{
-		id: 15,
-		tipo: "animacion",
-		numeroAnimacion: 11,
-		texto: "",
-		imagen: null, 
-	},
-	{
-		id: 16,
-		tipo: "animacion",
-		numeroAnimacion: 12,
-		texto: "",
-		imagen: null, 
-	},
 ];
 
 export default {
